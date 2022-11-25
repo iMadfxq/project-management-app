@@ -1,0 +1,12 @@
+aside {
+  width: 200px;
+
+  nav {
+    display: flex;
+    flex-direction: column;
+
+    .active {
+      background-color: pink;
+    }
+  }
+}
