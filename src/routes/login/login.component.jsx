@@ -1,15 +1,21 @@
 import './login.styles.scss'
 
 import { useState } from 'react';
+import { useLogin } from '../../hooks/useLogin';
 
 export default function Login( ) {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
+  const {login, isPending} = useLogin()
 
+  const handleLogin = (e) => {
+    e.preventDefault()
+    login(email, password)
+  }
   return (
     <section className="signup">
-      <form className="signup__form">
+      <form className="signup__form" onSubmit={handleLogin}>
         <label>
           <span>Email</span>
           <input
@@ -30,7 +36,9 @@ export default function Login( ) {
             autoComplete="password"
           />
         </label>
-        <button>Submit</button>
+        {!isPending && <button type='submit'>Submit</button>}
+        {isPending && <button disabled>Logging in...</button>}
+
       </form>
     </section>
   )
