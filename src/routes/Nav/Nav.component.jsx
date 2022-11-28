@@ -5,6 +5,7 @@ import { useLogout } from "../../hooks/useLogout";
 import Sidebar from "../../components/Sidebar/Sidebar.component";
 import { useContext } from "react";
 import { AuthContext } from "../../context/AuthContext";
+import AppUsers from "../../components/AppUsers/AppUsers.component";
 
 export default function Nav() {
   const { logout, isPending } = useLogout();
@@ -45,6 +46,9 @@ export default function Nav() {
           <Sidebar photoURL={user.photoURL} displayName={user.displayName} />
         )}
         <Outlet />
+        {user && (
+          <AppUsers />
+        )}
       </main>
     </>
   );
