@@ -2,12 +2,12 @@ import './Sidebar.styles.scss'
 
 import { NavLink } from 'react-router-dom'
 
-export default function Sidebar() {
+export default function Sidebar({photoURL, displayName}) {
   return (
     <aside>
       <section>
-        {/* avatar and username */}
-        <p>Hey user</p>
+        <img src={photoURL} alt="User's thumbnail" />
+        <p>Hey, {displayName}</p>
       </section>
       <nav>
         <NavLink to={'/'}>Dashboard</NavLink>

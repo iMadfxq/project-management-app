@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { useSignup } from "../../hooks/useSignup";
+import { Link } from "react-router-dom";
 import "./signup.styles.scss";
 
 export default function Signup() {
@@ -86,6 +87,7 @@ export default function Signup() {
         {!isPending && <button>Submit</button>}
         {error && <p>{error}</p>}
       </form>
+      <p>Already have an account? <Link to={'/login'}>Log in here</Link></p>
     </section>
   );
 }
