@@ -7,7 +7,7 @@ export default function AppUsers() {
     <section className='appusers'>
       <p>Users</p>
       {documents && documents.map((user) => (
-        <article>
+        <article key={user.id}>
           <span className={user.online ? 'online' : ''}></span>
           <img src={user.photoURL} alt="user thumbnail" />
           <p>{user.displayName}</p>
