@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import "./create.styles.scss";
-import Select from 'react-select'
+import Select from "react-select";
 import { useCollection } from "../../hooks/useCollection";
 
 const categories = [
@@ -17,21 +17,34 @@ export default function Create() {
   const [assignedTo, setAssignedTo] = useState([]);
   const [category, setCategory] = useState("");
 
-  const [userOptions, setUserOptions] = useState([])
+  const [userOptions, setUserOptions] = useState([]);
 
-  const {documents} = useCollection('users')
+  const [formError, setFormError] = useState(null);
+
+  const { documents } = useCollection("users");
 
   useEffect(() => {
-    if(documents) {
-      const options = documents.map(user => {
-        return {value: user, label: user.displayName}
-      })
-      setUserOptions(options)
+    if (documents) {
+      const options = documents.map((user) => {
+        return { value: user, label: user.displayName };
+      });
+      setUserOptions(options);
     }
-  }, [documents])
+  }, [documents]);
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    setFormError(null);
+
+    if (!category) {
+      setFormError("Please select a category");
+      return;
+    }
+
+    if (assignedTo.length < 1) {
+      setFormError("Please assign at least 1 user to the project");
+      return;
+    }
     console.log(title, details, dueDate, category, assignedTo);
   };
 
@@ -68,14 +81,22 @@ export default function Create() {
         </label>
         <label>
           <span>Assigned to:</span>
-          <Select isMulti onChange={(option) => setAssignedTo(option)} options={userOptions} />
+          <Select
+            isMulti
+            onChange={(option) => setAssignedTo(option)}
+            options={userOptions}
+          />
         </label>
         <label>
           <span>Category:</span>
-          <Select options={categories} onChange={option => setCategory(option.value)} />
+          <Select
+            options={categories}
+            onChange={(option) => setCategory(option.value)}
+          />
         </label>
         <button type="submit">Submit</button>
       </form>
+      {formError && <p>{formError}</p>}
     </section>
   );
 }
