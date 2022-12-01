@@ -1,7 +1,9 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import "./create.styles.scss";
 import Select from "react-select";
 import { useCollection } from "../../hooks/useCollection";
+import { timestamp } from "../../firebase/config";
+import { AuthContext } from "../../context/AuthContext";
 
 const categories = [
   { value: "Marketing", label: "Marketing" },
@@ -14,14 +16,16 @@ export default function Create() {
   const [title, setTitle] = useState("");
   const [details, setDetails] = useState("");
   const [dueDate, setDueDate] = useState("");
-  const [assignedTo, setAssignedTo] = useState([]);
   const [category, setCategory] = useState("");
+  const [assignedTo, setAssignedTo] = useState([]);
 
   const [userOptions, setUserOptions] = useState([]);
 
   const [formError, setFormError] = useState(null);
 
   const { documents } = useCollection("users");
+
+  const { user } = useContext(AuthContext);
 
   useEffect(() => {
     if (documents) {
@@ -45,7 +49,32 @@ export default function Create() {
       setFormError("Please assign at least 1 user to the project");
       return;
     }
-    console.log(title, details, dueDate, category, assignedTo);
+
+    const createdBy = {
+      displayName: user.displayName,
+      id: user.uid,
+      photoURL: user.photoURL,
+    };
+
+    const assignedToList = assignedTo.map((u) => {
+      return { 
+        displayName: u.value.displayName,
+        id: u.value.id,
+        photoURL: u.value.photoURL 
+      };
+    });
+
+    const project = {
+      title,
+      details,
+      dueDate: timestamp.fromDate(new Date(dueDate)),
+      category,
+      comments: [],
+      createdBy,
+      assignedToList,
+    };
+
+    console.log(project);
   };
 
   return (
@@ -80,18 +109,18 @@ export default function Create() {
           />
         </label>
         <label>
-          <span>Assigned to:</span>
-          <Select
-            isMulti
-            onChange={(option) => setAssignedTo(option)}
-            options={userOptions}
-          />
-        </label>
-        <label>
           <span>Category:</span>
           <Select
             options={categories}
             onChange={(option) => setCategory(option.value)}
+          />
+        </label>
+        <label>
+          <span>Assigned to:</span>
+          <Select
+            isMulti
+            onChange={(option) => {setAssignedTo(option)}}
+            options={userOptions}
           />
         </label>
         <button type="submit">Submit</button>
