@@ -1,1 +1,8 @@
-$primary-color: pink;
+$primary-color: red;
+
+@mixin center-children() {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+} 
