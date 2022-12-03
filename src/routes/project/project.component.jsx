@@ -1,4 +1,6 @@
 import { useParams } from 'react-router-dom'
+import ProjectComments from '../../components/ProjectComments/ProjectComments.component'
+import ProjectSummary from '../../components/ProjectSummary/ProjectSummary.component'
 import { useDocument } from '../../hooks/useDocument'
 import './project.styles.scss'
 
@@ -14,9 +16,10 @@ export default function Project( ) {
   }
   if(document) {
     return (
-      <>
-        <p>{document.title}</p>
-      </>
+      <section className='project'>
+        <ProjectSummary project={document} />
+        <ProjectComments project={document} />
+      </section>
     )
   }
 }
