@@ -31,6 +31,14 @@ export default function ProjectComments({project}) {
 
   return (
     <section className="project__comments">
+      <section className="project__comments--content">
+        {project.comments.length > 0 && project.comments.map(c => (
+          <article key={c.id}>
+            <p>{c.commentText}</p>
+            <p>{c.createdAt.toDate().toDateString()}</p>
+          </article>
+        ))}
+      </section>
       <form onSubmit={handleSubmit}>
         <label>
           <span>Comment:</span>
