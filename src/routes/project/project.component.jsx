@@ -1,4 +1,5 @@
 import { useParams } from 'react-router-dom'
+import FilterProjects from '../../components/FilterProjects/FilterProjects.component'
 import ProjectComments from '../../components/ProjectComments/ProjectComments.component'
 import ProjectSummary from '../../components/ProjectSummary/ProjectSummary.component'
 import { useDocument } from '../../hooks/useDocument'
@@ -17,6 +18,7 @@ export default function Project( ) {
   if(document) {
     return (
       <section className='project'>
+        <FilterProjects />
         <ProjectSummary project={document} />
         <ProjectComments project={document} />
       </section>
