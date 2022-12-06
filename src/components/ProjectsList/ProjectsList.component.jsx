@@ -4,7 +4,7 @@ import "./ProjectsList.styles.scss";
 export default function ProjectsList({ projects }) {
   return (
     <section className="dashboard__projectslist">
-      {projects.length === 0 && <p>Sorry, no projects have been created yet</p>}
+      {projects.length === 0 && <p>No projects found</p>}
       {projects.map((p) => (
         <Link to={`project/${p.id}`} className="dashboard__projectslist--item" key={p.id}>
           <p>{p.title}</p>

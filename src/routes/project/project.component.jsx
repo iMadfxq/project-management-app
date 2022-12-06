@@ -18,7 +18,6 @@ export default function Project( ) {
   if(document) {
     return (
       <section className='project'>
-        <FilterProjects />
         <ProjectSummary project={document} />
         <ProjectComments project={document} />
       </section>
