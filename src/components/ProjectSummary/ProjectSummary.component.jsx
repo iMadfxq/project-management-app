@@ -4,17 +4,15 @@ import { AuthContext } from "../../context/AuthContext";
 import { useFirestore } from "../../hooks/useFirestore";
 
 export default function ProjectSummary({ project }) {
-  const {deleteDocument} = useFirestore('Projects')
-  const navigate = useNavigate()
-  
-  const {user} = useContext(AuthContext)
+  const { deleteDocument } = useFirestore("Projects");
+  const navigate = useNavigate();
 
-
+  const { user } = useContext(AuthContext);
 
   const handleCompleted = async () => {
-     await deleteDocument(project.id)
-    navigate('/')
-  }
+    await deleteDocument(project.id);
+    navigate("/");
+  };
 
   return (
     <section className="project__summary">
@@ -35,7 +33,9 @@ export default function ProjectSummary({ project }) {
           );
         })}
       </section>
-      {user.uid === project.createdBy.id && <button onClick={handleCompleted}>Mark as completed</button>}
+      {user.uid === project.createdBy.id && (
+        <button onClick={handleCompleted}>Mark as completed</button>
+      )}
     </section>
   );
 }
