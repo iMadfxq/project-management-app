@@ -40,13 +40,13 @@ export default function Dashboard() {
     : null;
 
   return (
-    <>
+    <section className="dashboard">
       {error && <p>{error}</p>}
       <FilterProjects
         currentFilter={currentFilter}
         changeFilter={changeFilter}
       />
       {filteredProjects && <ProjectsList projects={filteredProjects} />}
-    </>
+    </section>
   );
 }

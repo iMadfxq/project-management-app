@@ -17,6 +17,7 @@ export default function FilterProjects({ currentFilter, changeFilter }) {
 
   return (
     <nav>
+      <p>Filter: </p>
       {filters.map((f) => (
         <button
           className={currentFilter === f ? "active" : ""}

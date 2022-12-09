@@ -1,14 +1,47 @@
 @import '../../variables';
 
 .dashboard__projectslist {
-  @include center-children;
+
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
 
   &--item {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     border: 1px solid black;
+    padding: 20px;
+    width: 260px;
+    height: 220px;
+    text-decoration: none;
+    color: black;
+    border-radius: 20px;
+    margin: 10px;
+    font-size: $text-size;
+    & > * {
+      margin-bottom: 10px;
+    }
+    p {
+      text-align: center;
+    }
     img {
       border-radius: 50%;
       width: 40px;
       height: 40px;
+    }
+    .assignedTo {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      div {
+        display: flex;
+        span {
+          margin: 3px;
+        }
+      }
     }
   }
 }
