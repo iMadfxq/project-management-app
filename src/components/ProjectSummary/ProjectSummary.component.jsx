@@ -23,6 +23,7 @@ export default function ProjectSummary({ project }) {
       <p>Category: {project.category}</p>
       <p>{project.details}</p>
       <p>Project is due: {project.dueDate.toDate().toDateString()}</p>
+      <p>Assigned to:</p>
       <section className="project__summary--assignedTo">
         {project.assignedToList.map((user) => {
           return (

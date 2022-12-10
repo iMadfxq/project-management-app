@@ -1,13 +1,13 @@
 $primary-color: rgb(84, 84, 227);
 
-$title-size: 2.2rem;
-$subtitle-size: 1.8rem;
-$text-size: 1.5rem;
+$title-size: 2.4rem;
+$subtitle-size: 2rem;
+$text-size: 1.4rem;
 
 
-@mixin center-children() {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
+@mixin avatar-properties() {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: 2px solid $primary-color;
 } 

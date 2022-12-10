@@ -1,13 +1,10 @@
-
+@import '../../variables';
 
 aside {
   width: 200px;
 
   img {
-    width: 70px;
-    height: 70px;
-    border-radius: 50%;
-    object-fit: cover;
+    @include avatar-properties;
   }
 
   nav {

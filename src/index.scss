@@ -1,3 +1,5 @@
+@import './variables';
+
 * {
   box-sizing: border-box;
   padding: 0;
@@ -10,4 +12,20 @@ html {
 }
 .active {
   color: red;
+}
+
+h1 {
+  font-size: $title-size;
+}
+
+h2 {
+  font-size: $title-size;
+}
+
+h3 {
+  font-size: $subtitle-size;
+}
+
+p {
+  font-size: $text-size;
 }
