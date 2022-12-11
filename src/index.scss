@@ -29,3 +29,18 @@ h3 {
 p {
   font-size: $text-size;
 }
+
+button {
+  border: 1px solid black;
+  padding: 10px;
+  border-radius: 10px;
+  background-color: $secondary-color;
+  cursor: pointer;
+  transition: 300ms;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+  padding: 20px;
+}

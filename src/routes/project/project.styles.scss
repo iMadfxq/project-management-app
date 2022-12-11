@@ -30,4 +30,19 @@
       }
     }
   }
+  &__comments {
+    display: flex;
+    flex-direction: column;
+    margin-left: 60px;
+
+    form {
+      display: flex;
+    flex-direction: column;
+      label {
+        display: flex;
+        flex-direction: column;
+    
+      }
+    }
+  }
 }

@@ -12,7 +12,7 @@ export default function Sidebar({photoURL, displayName}) {
       <nav>
         <NavLink to={'/'}>Dashboard</NavLink>
         <NavLink to={'/create'}>Create</NavLink>
-
+        <a href="/">***YOUR PROJECTS HERE***</a>
       </nav>
     </aside>
   )

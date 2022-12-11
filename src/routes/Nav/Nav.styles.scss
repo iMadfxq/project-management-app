@@ -11,6 +11,12 @@ header {
   .header__links--element {
     margin-left: 10px;
   }
+  button:hover {
+    color: red;
+  }
+  a {
+    font-size: $subtitle-size;
+  }
 }
 
 main {

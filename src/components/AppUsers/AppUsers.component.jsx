@@ -5,7 +5,7 @@ export default function AppUsers() {
   const { documents } = useCollection('users', null, null)
   return (
     <section className='appusers'>
-      <p>Users</p>
+      <h2>Users</h2>
       {documents && documents.map((user) => (
         <article key={user.id}>
           <span className={user.online ? 'online' : ''}></span>

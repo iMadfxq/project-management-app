@@ -15,7 +15,7 @@ export default function Nav() {
   return (
     <>
       <header>
-        <p>PM App</p>
+        <Link to={'/'}>PM App</Link>
         <section className="header__links">
           {!user ? (
             <Link to={"/signup"} className="header__links--element">

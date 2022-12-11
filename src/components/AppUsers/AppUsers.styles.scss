@@ -11,13 +11,16 @@
   width: 200px;
   display: flex;
   flex-direction: column;
+  margin-left: 50px;
   
+  h2 {
+    margin: 20px 0px 20px 0px;
+  }
 
   article {
     display: flex;
     align-items: center;
     position: relative;
-    margin-left: 50px;
     img {
       @include avatar-properties;
     }
