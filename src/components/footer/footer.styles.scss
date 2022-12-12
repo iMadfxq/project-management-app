@@ -1,0 +1,36 @@
+footer {
+  width: 100%;
+  position: absolute;
+  z-index: 2;
+  bottom: 0;
+  cursor: pointer;
+  height: 80px;
+}
+.footer__info {
+  height: 80px;
+  background-color: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.4rem;
+}
+.footer__info a {
+  color: white;
+  min-width: 100%;
+  min-height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 0.3s;
+}
+.footer__info a:hover {
+  font-size: 1.5rem;
+  text-decoration: underline;
+}
+.footer__info span {
+  color: red;
+  margin-inline-start: 5px;
+  font-size: 1.6rem;
+  font-weight: bold;
+  text-decoration: underline;
+}

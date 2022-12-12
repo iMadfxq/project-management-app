@@ -6,6 +6,7 @@ import Sidebar from "../../components/Sidebar/Sidebar.component";
 import { useContext } from "react";
 import { AuthContext } from "../../context/AuthContext";
 import AppUsers from "../../components/AppUsers/AppUsers.component";
+import Footer from "../../components/footer/footer.component";
 
 export default function Nav() {
   const { logout, isPending } = useLogout();
@@ -50,6 +51,7 @@ export default function Nav() {
           <AppUsers />
         )}
       </main>
+      <Footer portfolio={'https://imadfxq.com/'} />
     </>
   );
 }
