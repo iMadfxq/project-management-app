@@ -11,3 +11,4 @@ Signup and add your custom profile picture. Create projects and assing them to t
 - Every project is a document in the database, comments are part of each document.
 - Using react-select library.
 - Realtime DB provides always updated documents.
+- Auth forms use Browser's autocomplete functionality, allowing for secure passwords and automaticly saved credentials.
