@@ -1,11 +1,15 @@
 @import '../../variables';
 
 aside {
-  margin: 30px 0px 20px 0px;
-  width: 200px;
+  padding: 30px 0px 20px 0px;
+  width: 100%;
+  min-height: 100%;
+  min-width: 150px;
   display: flex;
   flex-direction: column;
   align-items: center;
+  background-color: $secondary-color;
+  border-right: 3px solid $primary-color;
 
   section {
     display: flex;
@@ -31,7 +35,10 @@ aside {
     width: 100%;
 
     .active {
-      background-color: pink;
+      border-top-left-radius: 50px;
+      border-bottom-left-radius: 50px;
+
     }
+
   }
 }

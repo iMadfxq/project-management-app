@@ -1,5 +1,6 @@
-$primary-color: rgb(84, 84, 227);
-$secondary-color: rgb(153, 153, 225);
+$primary-color: #754A05;
+$secondary-color: #F7B854;
+$tertiary-color: #F59B0A;
 
 
 $title-size: 2.4rem;
@@ -11,5 +12,6 @@ $text-size: 1.4rem;
   width: 50px;
   height: 50px;
   border-radius: 50%;
+  object-fit: cover;
   border: 2px solid $primary-color;
 } 

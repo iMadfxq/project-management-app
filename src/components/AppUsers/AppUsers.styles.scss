@@ -8,19 +8,27 @@
 }
 
 .appusers {
-  width: 200px;
+  width: 100%;
+  min-width: 180px;
   display: flex;
   flex-direction: column;
-  margin-left: 50px;
+  padding: 20px 20px 20px 40px;
+  background-color: $secondary-color;
+  border-left: 3px solid $primary-color;
+
   
   h2 {
     margin: 20px 0px 20px 0px;
+  }
+  .active {
+    border-radius: 20px;
   }
 
   article {
     display: flex;
     align-items: center;
     position: relative;
+    padding: 5px;
     img {
       @include avatar-properties;
     }
