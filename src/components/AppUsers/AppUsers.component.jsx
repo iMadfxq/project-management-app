@@ -16,7 +16,6 @@ export default function AppUsers() {
           <p>{u.displayName}</p>
         </article>
       ))}
-      <p>***subrayar tu name***</p>
     </section>
   )
 }

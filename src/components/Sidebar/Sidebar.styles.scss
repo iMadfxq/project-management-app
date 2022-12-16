@@ -21,6 +21,24 @@ aside {
     @include avatar-properties;
   }
 
+  h4 {
+    display: flex;
+  user-select: none;
+  cursor: pointer;
+  align-items: center;
+  position: relative;
+  span {
+    margin-left: 10px;
+    font-size: 1.4rem;
+    display: flex;
+    transition: 300ms;
+  }
+  .closed {
+    transform: rotate(-0.25turn);
+  }
+  }
+
+
   nav {
     display: flex;
     flex-direction: column;
