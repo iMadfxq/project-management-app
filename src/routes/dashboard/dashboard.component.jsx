@@ -7,7 +7,7 @@ import { useCollection } from "../../hooks/useCollection";
 import "./dashboard.styles.scss";
 
 export default function Dashboard() {
-  const { documents, error } = useCollection("Projects");
+  const { documents, error } = useCollection("Projects", null, ['dueDate']);
   const [currentFilter, setCurrentFilter] = useState("All");
   const { user } = useContext(AuthContext);
 
@@ -41,7 +41,9 @@ export default function Dashboard() {
 
   return (
     <section className="dashboard">
+      <h1>Projects:</h1>
       {error && <p>{error}</p>}
+
       <FilterProjects
         currentFilter={currentFilter}
         changeFilter={changeFilter}

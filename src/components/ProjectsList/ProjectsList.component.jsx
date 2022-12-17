@@ -11,11 +11,11 @@ export default function ProjectsList({ projects }) {
           className="dashboard__projectslist--item"
           key={p.id}
         >
-          <p>{p.title}</p>
-          <p>Due: {p.dueDate.toDate().toDateString()}</p>
-          <p>Category: {p.category}</p>
+          <h3>{p.title}</h3>
+          <b>Due: <p> {p.dueDate.toDate().toDateString()}</p></b>
+          <b>Category: <p> {p.category}</p></b>
           <div className="assignedTo">
-            Assigned to:{" "}
+            <b>Assigned to:</b>
             <div>
               {p.assignedToList.map((user) => {
                 return (

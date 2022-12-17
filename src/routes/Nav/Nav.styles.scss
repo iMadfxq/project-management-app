@@ -24,8 +24,12 @@ header {
 
 main {
   display: grid;
-  width: 100%;
-  height: 100vh;
+  min-width: 100%;
+  min-height: 100vh;
   grid-template-columns: 1fr 3fr 1fr;
   padding-top: 60px;
+  padding-bottom: 80px;
+  box-sizing: border-box;
+
+
 }

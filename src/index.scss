@@ -10,9 +10,10 @@ html {
   font-size: 62.5%;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
+
 #root {
-  min-width: 100vw;
-  min-height: 100vh;
+  min-width: 100%;
+  min-height: 100%;
   position: relative;
 }
 .active {
@@ -20,6 +21,7 @@ html {
   background-color: $primary-color;
   color: white;
   transition: 500ms;
+  text-decoration: underline;
 }
 
 h1 {
@@ -27,7 +29,7 @@ h1 {
 }
 
 h2 {
-  font-size: $title-size;
+  font-size: $subtitle-size;
 }
 
 h3 {
@@ -45,9 +47,10 @@ button {
   background-color: $tertiary-color;
   cursor: pointer;
   transition: 300ms;
+  font-size: 1.6rem;
 }
 
-input {
+input, textarea {
   width: 300px;
   height: 40px;
   border-radius: 10px;

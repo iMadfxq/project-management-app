@@ -87,7 +87,7 @@ export default function Create() {
 
   return (
     <section className="create">
-      <h2>Create a project</h2>
+      <h1>Create a project: </h1>
       <form onSubmit={handleSubmit}>
         <label>
           <span>Title:</span>

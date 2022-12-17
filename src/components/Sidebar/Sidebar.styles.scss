@@ -1,4 +1,4 @@
-@import '../../variables';
+@import "../../variables";
 
 aside {
   padding: 30px 0px 20px 0px;
@@ -11,43 +11,52 @@ aside {
   background-color: $secondary-color;
   border-right: 3px solid $primary-color;
 
+  h3 {
+    margin-top: 10px;
+    text-align: center;
+  }
+
   section {
     display: flex;
     flex-direction: column;
-    align-items: center
+    align-items: center;
   }
 
   img {
     @include avatar-properties;
+    width: 90px;
+    height: 90px;
   }
 
   h4 {
     display: flex;
-  user-select: none;
-  cursor: pointer;
-  align-items: center;
-  position: relative;
-  span {
-    margin-left: 10px;
-    font-size: 1.4rem;
-    display: flex;
-    transition: 300ms;
+    user-select: none;
+    font-size: $text-size;
+    text-align: center;
+    padding: 15px;
+    cursor: pointer;
+    align-items: center;
+    position: relative;
+    span {
+      margin-left: 10px;
+      font-size: 1.4rem;
+      display: flex;
+      transition: 300ms;
+    }
+    .closed {
+      transform: rotate(-0.25turn);
+    }
   }
-  .closed {
-    transform: rotate(-0.25turn);
-  }
-  }
-
 
   nav {
     display: flex;
     flex-direction: column;
     align-items: center;
     font-size: $text-size;
-  margin: 20px 0px 20px 0px;
+    margin: 20px 0px 20px 0px;
 
     a {
-    width: 100%;
+      width: 100%;
       text-align: center;
     }
     width: 100%;
@@ -55,8 +64,6 @@ aside {
     .active {
       border-top-left-radius: 50px;
       border-bottom-left-radius: 50px;
-
     }
-
   }
 }

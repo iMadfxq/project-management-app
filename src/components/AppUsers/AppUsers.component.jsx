@@ -8,7 +8,7 @@ export default function AppUsers() {
   const {user} = useContext(AuthContext)
   return (
     <section className='appusers'>
-      <h2>Users</h2>
+      <h2>Users:</h2>
       {documents && documents.map((u) => (
         <article key={u.id} className={u.id === user.uid ? 'active' : ''}>
           <span className={u.online ? 'online' : ''}></span>
