@@ -38,3 +38,13 @@
     }
   }
 }
+
+@media only screen and (max-width: 750px) {
+  .appusers {
+    display: none;
+  }
+
+  main {
+    grid-template-columns: 1fr 3fr;
+  }
+}
