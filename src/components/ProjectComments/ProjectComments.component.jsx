@@ -35,15 +35,19 @@ export default function ProjectComments({project}) {
       <section className="project__comments--content">
         {project.comments.length > 0 && project.comments.map(c => (
           <article key={c.id}>
+            <div>
+              <img src={c.creatorPhotoURL} />
+              <p>{c.createdBy}</p>
+            </div>
             <p>{c.commentText}</p>
-            <p>{formatDistanceToNow(c.createdAt.toDate(), {addSuffix:true}) }</p>
+            <span>⏲ {formatDistanceToNow(c.createdAt.toDate(), {addSuffix:true}) }</span>
           </article>
         ))}
       </section>
       <form onSubmit={handleSubmit}>
         <label>
           <span>Comment:</span>
-          <textarea required onChange={e => setCommentText(e.target.value)} value={commentText} />
+          <textarea placeholder="Type here..." required onChange={e => setCommentText(e.target.value)} value={commentText} />
         </label>
         <button>Submit</button>
 

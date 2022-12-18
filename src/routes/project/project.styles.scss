@@ -1,15 +1,21 @@
 @import '../../variables';
 
 .project {
-  display: flex;
-  align-items: center;
+  display: grid;
+  grid-template-columns: 2fr 1fr;
 
   &__summary {
     display: flex;
     flex-direction: column;
+    padding: 20px;
+
+    span {
+      font-weight: 300;
+    }
 
     h2 {
-      font-size: $subtitle-size;
+      font-size: $title-size;
+      margin: 10px 0px;
     }
 
     p{
@@ -17,15 +23,21 @@
     }
     &--assignedTo {
       display: flex;
+      justify-content: center;
 
       article {
       display: flex; 
       flex-direction: column;
       align-items: center;
+      margin-bottom: 20px;
 
         width: 80px;
         img {
           @include avatar-properties;
+        }
+        p {
+          text-align: center;
+          font-weight: 300;
         }
       }
     }
@@ -33,7 +45,48 @@
   &__comments {
     display: flex;
     flex-direction: column;
+    align-items: center;
     margin-left: 60px;
+    padding: 20px;
+
+    &--content {
+      article {
+        display: flex;
+        flex-direction: column;
+        background-color: rgb(228, 228, 228);
+        padding: 10px;
+        margin: 10px;
+        border-radius: 10px;
+        width: 300px;
+        height: fit-content;
+
+        p {
+          max-width: 260px;
+          height: fit-content;
+        }
+
+        span  {
+          font-weight: 300;
+          margin-top: 5px;
+        }
+        div {
+          display: flex;
+          align-items: center;
+          margin-bottom: 5px;
+          img {
+            @include avatar-properties;
+            width: 30px;
+            height: 30px;
+            margin-right: 5px;
+  
+          }
+          p {
+            font-weight: 700;
+          }
+        }
+      }
+    }
+
 
     form {
       display: flex;
@@ -41,6 +94,14 @@
       label {
         display: flex;
         flex-direction: column;
+        font-size: $text-size;
+        margin-bottom: 10px;
+
+        span {
+          margin-bottom: 10px;
+          font-weight: 700;
+          text-decoration: underline;
+        }
     
       }
     }

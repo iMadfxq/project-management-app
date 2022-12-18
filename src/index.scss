@@ -58,6 +58,12 @@ input, textarea {
   border: 1px solid black;
 }
 
+textarea {
+  padding-top: 10px;
+  height: 80px;
+  resize: none;
+}
+
 a {
   text-decoration: none;
   color: black;
