@@ -1,5 +1,4 @@
 import "./App.scss";
-
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import { AuthContext } from "./context/AuthContext";
 
@@ -10,11 +9,12 @@ import Login from "./routes/login/login.component";
 import Project from "./routes/project/project.component";
 import Signup from "./routes/signup/signup.component";
 import Nav from "./routes/Nav/Nav.component";
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 
 function App() {
 
   const {user, authIsReady} = useContext(AuthContext)
+
 
   return (
     <BrowserRouter>

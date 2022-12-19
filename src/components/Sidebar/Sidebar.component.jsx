@@ -1,5 +1,6 @@
 import "./Sidebar.styles.scss";
 
+
 import { NavLink } from "react-router-dom";
 import { useCollection } from "../../hooks/useCollection";
 import { useState } from "react";
@@ -43,8 +44,9 @@ useEffect(() => {
         </section>
         <nav>
           <NavLink
-            onClick={() => {
+            onClick={ () => {
               setOpenPanel(false);
+
             }}
             to={"/"}
           >
