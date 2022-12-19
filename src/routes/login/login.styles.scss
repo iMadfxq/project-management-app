@@ -1,0 +1,42 @@
+@import '../../variables';
+
+.login {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  h1 {
+    margin-bottom: 10px;
+  }
+  form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(233, 233, 233);
+    width: 280px;
+    height: 300px;
+    border-radius: 10px;
+    border: 2px solid $tertiary-color;
+    label {
+      display: flex;
+      flex-direction: column;
+      font-size: $text-size;
+      margin: 10px;
+    }
+    input {
+      margin-top: 5px;
+      width: 240px;
+    }
+  }
+  p {
+    margin-top: 10px;
+  }
+  a {
+    padding: 0px;
+    margin-left: 4px;
+    text-decoration: underline;
+    color: blue;
+  }
+}

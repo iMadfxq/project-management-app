@@ -15,10 +15,11 @@ export default function Login( ) {
     login(email, password)
   }
   return (
-    <section className="signup">
-      <form className="signup__form" onSubmit={handleLogin}>
+    <section className="login">
+      <h1>Login:</h1>
+      <form className="login__form" onSubmit={handleLogin}>
         <label>
-          <span>Email</span>
+          <span>Email:</span>
           <input
             required
             onChange={(e) => setEmail(e.target.value)}
@@ -28,7 +29,7 @@ export default function Login( ) {
           />
         </label>
         <label>
-          <span>Password</span>
+          <span>Password:</span>
           <input
             required
             onChange={(e) => setPassword(e.target.value)}

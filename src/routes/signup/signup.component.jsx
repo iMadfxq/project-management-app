@@ -48,9 +48,10 @@ export default function Signup() {
 
   return (
     <section className="signup">
+      <h1>Signup:</h1>
       <form className="signup__form" onSubmit={handleSubmit}>
         <label>
-          <span>Email</span>
+          <span>Email:</span>
           <input
             required
             onChange={(e) => setEmail(e.target.value)}
@@ -60,7 +61,7 @@ export default function Signup() {
           />
         </label>
         <label>
-          <span>Password</span>
+          <span>Password:</span>
           <input
             required
             onChange={(e) => setPassword(e.target.value)}
@@ -70,7 +71,7 @@ export default function Signup() {
           />
         </label>
         <label>
-          <span>Username</span>
+          <span>Username:</span>
           <input
             required
             onChange={(e) => setDisplayName(e.target.value)}
@@ -79,7 +80,7 @@ export default function Signup() {
           />
         </label>
         <label>
-          <span>Profile Picture</span>
+          <span>Profile Picture:</span>
           <input required onChange={handleFileChange} type="file" />
           {thumbnailError && <p>{thumbnailError}</p>}
         </label>

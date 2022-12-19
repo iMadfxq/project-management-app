@@ -16,6 +16,14 @@ export default function Sidebar({photoURL, displayName}) {
     console.log(open)
   }
   return (
+    <>
+    <div className='responsive-openPanel'>
+      ➡
+      <div>
+      <span>🏠</span>
+      <p>Panel</p>
+      </div>
+    </div>
     <aside>
       <section>
         <img src={photoURL} alt="User's thumbnail" />
@@ -37,5 +45,6 @@ export default function Sidebar({photoURL, displayName}) {
         })}
       </nav>
     </aside>
+    </>
   )
 }

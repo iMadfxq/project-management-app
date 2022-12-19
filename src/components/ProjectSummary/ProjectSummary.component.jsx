@@ -41,9 +41,9 @@ export default function ProjectSummary({ project }) {
           );
         })}
       </section>
-      {user.uid === project.createdBy.id && (
+      {user.uid === project.createdBy.id ? (
         <button onClick={handleCompleted}>Mark as completed</button>
-      )}
+      ): ''}
     </section>
   );
 }
