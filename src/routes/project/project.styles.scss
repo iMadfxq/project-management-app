@@ -24,6 +24,7 @@
     &--assignedTo {
       display: flex;
       justify-content: center;
+      flex-wrap: wrap;
 
       article {
       display: flex; 
@@ -106,4 +107,16 @@
       }
     }
   }
+}
+
+@media only screen and (max-width:890px) {
+  .project {
+    display: flex;
+    flex-direction: column;
+
+    &__comments {
+      margin-left: 0;
+    }
+  }
+
 }
