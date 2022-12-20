@@ -35,6 +35,10 @@ main {
   height: 100%;
 
 }
+.activeNavlink {
+  text-decoration: underline;
+  color: $secondary-color;
+}
 
 @media only screen and (max-width: 560px) {
   main {

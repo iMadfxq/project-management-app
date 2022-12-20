@@ -1,4 +1,4 @@
-import { Outlet, Link } from "react-router-dom";
+import { Outlet, Link, NavLink } from "react-router-dom";
 import "./Nav.styles.scss";
 import { useLogout } from "../../hooks/useLogout";
 
@@ -19,16 +19,16 @@ export default function Nav() {
         <Link to={'/'}>PM App</Link>
         <section className="header__links">
           {!user ? (
-            <Link to={"/signup"} className="header__links--element">
+            <NavLink to={"/signup"} className={({isActive}) => isActive ? 'activeNavlink' : ''} >
               Signup
-            </Link>
+            </NavLink>
           ) : (
             <></>
           )}
           {!user ? (
-            <Link to={"/login"} className="header__links--element">
+            <NavLink to={"/login"} className={({isActive}) => isActive ? 'activeNavlink' : ''}>
               Login
-            </Link>
+            </NavLink>
           ) : (
             <></>
           )}
